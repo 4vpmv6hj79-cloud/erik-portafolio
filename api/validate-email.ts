@@ -60,7 +60,7 @@ export default async function handler(
     });
   }
 
-  const [localPart, rawDomain] = parts;
+  const rawDomain = parts[1];
   const domain = domainToASCII(rawDomain);
 
   // Validate domain.
