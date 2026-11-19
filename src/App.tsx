@@ -12,10 +12,15 @@ import {
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import FeaturedProjects from './components/FeaturedProjects';
-import Contact from './components/Contact';
+import { lazy, Suspense } from 'react';
+import DeferredSection from './components/DeferredSection';
+
+const Experience = lazy(() => import('./components/Experience'));
+const Skills = lazy(() => import('./components/Skills'));
+const FeaturedProjects = lazy(
+  () => import('./components/FeaturedProjects'),
+);
+const Contact = lazy(() => import('./components/Contact'));
 import Footer from './components/Footer';
 
 function App() {
@@ -278,13 +283,30 @@ function App() {
           </div>
         </section>
 
-        <Experience />
+        <Suspense
+          fallback={
+            <div
+              aria-hidden="true"
+              className="min-h-[320px]"
+            />
+          }
+        >
+          <DeferredSection id="experience">
+            <Experience />
+          </DeferredSection>
 
-        <Skills />
+          <DeferredSection id="skills">
+            <Skills />
+          </DeferredSection>
 
-        <FeaturedProjects />
+          <DeferredSection id="projects">
+            <FeaturedProjects />
+          </DeferredSection>
 
-        <Contact />
+          <DeferredSection id="contact">
+            <Contact />
+          </DeferredSection>
+        </Suspense>
       </main>
 
       <Footer />
