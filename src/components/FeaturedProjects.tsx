@@ -279,7 +279,7 @@ function FeaturedProjects() {
                     )}
 
                     {!project.url && !project.githubUrl && (
-                      <span className="text-sm font-medium text-slate-400">
+                      <span className="text-sm font-medium text-slate-600">
                         {language === 'es' ? 'Próximamente' : 'Coming soon'}
                       </span>
                     )}

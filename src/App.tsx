@@ -171,7 +171,7 @@ function App() {
                 </div>
 
                 <div className="mt-6 border-t border-slate-100 pt-5 sm:mt-8 sm:pt-6">
-                  <p className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+                  <p className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-600">
                     Core technologies
                   </p>
 

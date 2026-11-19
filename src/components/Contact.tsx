@@ -225,7 +225,7 @@ function Contact() {
                   : 'Open to new opportunities'}
               </h3>
 
-              <p className="mt-2 text-sm leading-7 text-blue-100">
+              <p className="mt-2 text-sm leading-7 text-white">
                 {isSpanish
                   ? 'Interesado en posiciones de Frontend Developer y Senior Frontend Developer.'
                   : 'Interested in Frontend Developer and Senior Frontend Developer opportunities.'}
